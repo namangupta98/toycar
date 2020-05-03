@@ -1,0 +1,12 @@
+<launch>
+    <rosparam file="$(find toycar)/config/hardware.yaml" command="load"/>
+    <rosparam file="$(find toycar)/config/controllers.yaml" command="load"/>
+    <rosparam file="$(find toycar)/config/joint_limits.yaml" command="load"/>
+    <node name="toycar" pkg="toycar" type="ROBOT_hardware_interface_node" output="screen"/>
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/"
+        args="
+            /toycar/controller/state
+            /toycar/controller/position/YOUR_ROBOT_JOINT
+            /toycar/controller/position/YOUR_OTHER_ROBOT_JOINT
+        "/>
+</launch>
