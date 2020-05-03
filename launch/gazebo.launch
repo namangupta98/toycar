@@ -1,9 +1,9 @@
 <launch>
 
-  <arg name="x_pos" default="-40.0"/>
-  <arg name="y_pos" default="-40.0"/>
+  <arg name="x_pos" default="-42.5"/>
+  <arg name="y_pos" default="-39.2"/>
   <arg name="z_pos" default="0.0"/>
-  <arg name="yaw" default="0.0"/>
+  <arg name="yaw" default="3.14"/>
 
   <param name="robot_description"
         textfile="$(find toycar)/urdf/toycar.urdf" />
@@ -13,24 +13,19 @@
 
   </include>
 
-        <!-- <arg name="paused" default="false"/>
-        <arg name="use_sim_time" default="true"/>
-        <arg name="gui" default="true"/>
-        <arg name="headless" default="false"/>
-        <arg name="debug" default="false"/> -->
+    <!-- <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/> -->
 
+    <node
+        name="spawn_model"
+        pkg="gazebo_ros"
+        type="spawn_model"
+        args="-file $(find toycar)/urdf/toycar.urdf -urdf -model toycar -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -Y $(arg yaw)"
+        output="screen"/>
 
-        <node
-            name="spawn_model"
-            pkg="gazebo_ros"
-            type="spawn_model"
-            args="-file $(find toycar)/urdf/toycar.urdf -urdf -model toycar -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -Y $(arg yaw)"
-            output="screen"/>
-
-
-            <!-- <node pkg="rviz" type="rviz" name="rviz"/> -->
+    <node pkg="rviz" type="rviz" name="rviz"/>
 
 </launch>
-
-
-
