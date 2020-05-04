@@ -1,5 +1,5 @@
-#ifndef ROS_CONTROL__TOYCAR_HARDWARE_INTERFACE_H
-#define ROS_CONTROL__TOYCAR_HARDWARE_INTERFACE_H
+//#ifndef ROS_CONTROL__TOYCAR_HARDWARE_INTERFACE_H
+//#define ROS_CONTROL__TOYCAR_HARDWARE_INTERFACE_H
 
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/joint_command_interface.h>
@@ -10,7 +10,7 @@
 #include <boost/scoped_ptr.hpp>
 #include <ros/ros.h>
 
-class ToyCar:: public hardware_interface::RobotHW
+class ToyCar:public hardware_interface::RobotHW
 {
 public:
     ToyCar(ros::NodeHandle& nh);
@@ -30,6 +30,7 @@ protected:
     joint_limits_interface::VelocityJointSaturationInterface velocityJointSaturationInterface;
     
 
+    double joint_effort_[2];
     double joint_position_[2];
     double joint_velocity_[2];
     double joint_effort_command_[2];
@@ -42,4 +43,4 @@ protected:
     boost::shared_ptr<controller_manager::ControllerManager> controller_manager_;
 };
 
-#endif
+//#endif
