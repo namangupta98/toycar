@@ -37,5 +37,9 @@ install(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+
+add_executable(toycar_hardware_interface src/toycar_hardware_interface.cpp)
+target_link_libraries(toycar_hardware_interface ${catkin_LIBRARIES})
+
 ## Specify libraries to link a library or executable target against
 
