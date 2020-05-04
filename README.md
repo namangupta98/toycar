@@ -12,16 +12,17 @@
 
 ## Run Instructions
 
- Navigate to your <ROS_workspace>/src and type
+ - Navigate to your <ROS_workspace>/src and type
  ```
  git clone https://github.com/namangupta98/toycar
  ```
- Build the package,
+ - Build the package,
  ```
  cd ~/<ROS_workspace>
  catkin_make
  ```
- Now, run the controller package by typing,
+ - ```catkin_make``` might not work on ROS Melodic, so use ```catkin build``` instead.
+ - Now, run the controller package by typing,
  ```
  source devel/setup.bash
  roslaunch toycar controller.launch
