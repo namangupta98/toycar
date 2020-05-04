@@ -1,0 +1,22 @@
+toycar:
+  controller:
+    state:
+      type: joint_state_controller/joint_state_controller
+      publish_rate: 50
+    position:
+      FrontLeftWheelJoint:
+        type: effort_controllers/joint_position_controller
+        joint: FrontLeftWheelJoint
+        pid: {p: 10.0, i: 0.0, d: 1.0}
+      FrontRightWheelJoint:
+        type: effort_controllers/joint_position_controller
+        joint: FrontRightWheelJoint
+        pid: {p: 10.0, i: 0.0, d: 1.0}
+      left_frontaxisjoint:
+        type: velocity_controllers/joint_velocity_controller
+        joint: left_frontaxisjoint
+        pid: {p: 10.0, i: 0.0, d: 1.0}
+      right_frontaxisjoint:
+        type: velocity_controllers/joint_velocity_controller
+        joint: right_frontaxisjoint
+        pid: {p: 10.0, i: 0.0, d: 1.0}
