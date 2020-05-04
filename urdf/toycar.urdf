@@ -186,6 +186,7 @@
 	<gazebo>
 		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
 			<robotNamespace>toycar</robotNamespace>
+      <legacyModeNS>true</legacyModeNS>
 		</plugin>
 	</gazebo>
 
@@ -553,10 +554,10 @@
     <transmission name="lateralFrontLeftWheelJoint">
 	  <type>transmission_interface/SimpleTransmission</type>
 	    <joint name="FrontLeftWheelJoint">
-	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 	    </joint>
 	    <actuator name="left_frontaxisjoint">
-	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 	      <!-- <mechanicalReduction>1</mechanicalReduction> -->
 	    </actuator>
 	  </transmission>
@@ -564,10 +565,10 @@
 	<transmission name="lateralFrontRightWheelJoint">
 	  <type>transmission_interface/SimpleTransmission</type>
 	    <joint name="FrontRightWheelJoint">
-	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 	    </joint>
 	    <actuator name="right_frontaxisjoint">
-	      <hardwareInterface>EffortJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
 	      <!-- <mechanicalReduction>1</mechanicalReduction> -->
 	    </actuator>
     </transmission>
@@ -575,10 +576,10 @@
 	<transmission name="longitudinalFrontRightWheelJoint">
 	  <type>transmission_interface/SimpleTransmission</type>
 	    <joint name="FrontRightWheelJoint">
-	      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 	    </joint>
 	    <actuator name="right_frontaxisjoint">
-	      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 	      <!-- <mechanicalReduction>1</mechanicalReduction> -->
 	    </actuator>
  	</transmission>
@@ -586,10 +587,10 @@
   	<transmission name="longitudinalFrontLeftWheelJoint">
 	  <type>transmission_interface/SimpleTransmission</type>
 	    <joint name="FrontLeftWheelJoint">
-	      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 	    </joint>
 	    <actuator name="left_frontaxisjoint">
-	      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+	      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
 	      <!-- <mechanicalReduction>1</mechanicalReduction> -->
 	    </actuator>
   	</transmission>
