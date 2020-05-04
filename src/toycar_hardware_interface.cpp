@@ -1,12 +1,17 @@
 #include <toycar_hardware_interface/toycar_hardware_interface.h>
 #include <joint_limits_interface/joint_limits.h>
 #include <joint_limits_interface/joint_limits_interface.h>
+#include <joint_limits_interface/joint_limits_urdf.h>
+#include <joint_limits_interface/joint_limits_rosparam.h>
 
 ToyCar::ToyCar(ros::NodeHandle& nh): nh_(nh){
     // Declare all JointHandles, JointInterfaces and JointLimitInterfaces of the robot
     init();
     // Create the controller manager
-    controller_manager_.reset(new controller_manager::ControllerManager(this, nh_)); 
+    
+    //controller_manager::ControllerManager controller_manager_(this, nh_);
+    controller_manager_.reset(new controller_manager::ControllerManager(this, nh_));
+    //controller_manager_.reset(new controller_manager::ControllerManager(this, nh_)); 
     //Set the frequency of the control loop.
     loop_hz_=10;
     ros::Duration update_freq = ros::Duration(1.0/loop_hz_);

@@ -11,23 +11,25 @@ find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	rospy
 	std_msgs
-	geometry_msgs 
+	geometry_msgs
+    controller_manager
+    hardware_interface
 )
 
 # Declare a catkin package
 catkin_package(
 	INCLUDE_DIRS
-	CATKIN_DEPENDS rospy geometry_msgs
+	CATKIN_DEPENDS rospy geometry_msgs controller_manager hardware_interface
 	DEPENDS
 )
 
 # Build target library
-include_directories( 
+include_directories(
   include
   ${catkin_INCLUDE_DIRS})
 
 foreach(dir config launch meshes urdf)
-	
+
 install(DIRECTORY ${dir}/
 		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
